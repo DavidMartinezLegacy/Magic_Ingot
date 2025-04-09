@@ -1,7 +1,7 @@
 # Magic-Ingot
 ```shell
 wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh 
-
+- test
 roscore
 rosrun turtlesim turtlesim_node
 ```
@@ -29,8 +29,8 @@ Ctrl + Shift + E   Horizontal split screen
 Ctrl + Shift + O   Vertical split screen
 Ctrl + Shift + W   Cancel split screen
 Alt + ↑ ↓ ← →      Move focus
-
-# Package Structure：
+# Package
+- Package Structure：
 ```
 Common files and paths under a package are:
 ├── CMakeLists.txt #package compilation rules (required)
