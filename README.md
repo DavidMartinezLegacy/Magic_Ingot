@@ -68,8 +68,8 @@ _Package related commands:_
 
 - rospack(Tools for package management):
 ```
-rospack help	                  Show rospack usage
-rospack list	                  List all packages on this machine
+rospack help	                    Show rospack usage
+rospack list	                    List all packages on this machine
 rospack depends                  [package] Displays the package's dependencies
 rospack find [package]	         Locating a package
 rospack profile	                 Refresh the location records of all packages
