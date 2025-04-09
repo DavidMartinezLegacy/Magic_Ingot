@@ -1,9 +1,11 @@
 # Magic-Ingot
+
+- ROS environment testing
 ```shell
-wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh 
-- test
 roscore
 rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+rosrun rqt_graph rqt_graph
 ```
 - Workspace
 ```shell
@@ -65,4 +67,5 @@ roslaunch wpr_simulation wpb_simple.launch #
 rosrun rqt_robot_steering rqt_robot_steering #Call rqt control interface
 ```
 - References:
-[ROS Index]（https://index.ros.org/）
+[ROS Index](https://index.ros.org/)
+[Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)
