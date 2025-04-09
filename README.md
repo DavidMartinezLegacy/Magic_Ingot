@@ -1,5 +1,7 @@
 # Magic-Ingot
-<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" alt="alt" title="ROS%20Structure.jpg">
+
+<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
+
 - ROS environment testing
 ```shell
 roscore
