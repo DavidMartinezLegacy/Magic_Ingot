@@ -33,7 +33,8 @@ source ~/.bashrc #Check if it is successful
 Ctrl + Shift + E   Horizontal split screen
 Ctrl + Shift + O   Vertical split screen
 Ctrl + Shift + W   Cancel split screen
-Alt + ↑ ↓ ← →      Move focus
+Alt + ↑ ↓ ← →      Move focus <br>
+
 # Package
 - Package Structure：
 ```
