@@ -68,21 +68,19 @@ _Package related commands:_
 
 - rospack(Tools for package management):
 ```
-rospack help	显示rospack的用法
-rospack list	列出本机所有package
-rospack depends [package]	显示package的依赖包
-rospack find [package]	定位某个package
-rospack profile	刷新所有package的位置记录
+rospack help	                   Show rospack usage
+rospack list	                   List all packages on this machine
+rospack depends                  [package] Displays the package's dependencies
+rospack find [package]	         Locating a package
+rospack profile	                 Refresh the location records of all packages
 ```
 - roscd (The command is similar to the Linux system's cd, but the improvement is that roscd can directly cd to the ROS software package):
 ```
-roscd [pacakge]	cd到ROS package所在路径
-rosls:
-rosls 也可以视为Linux指令 ls 的改进版，可以直接 ls ROS软件包的内容。
+roscd [pacakge]	                 Go to the path where the ROS package is located
 ```
-- rosls:
+- rosls(It can be regarded as an improved version of the Linux command ls, which can directly ls the contents of the ROS package):
 ```
-rosls [pacakge]	List the files under the ROS package
+rosls [pacakge]	                 List the files under the ROS package
 ```
 ```shell
 git checkout noetic-devel
