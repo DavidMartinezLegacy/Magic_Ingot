@@ -88,13 +88,11 @@ rosrun turtlesim turtlesim_node
 roslaunch wpr_simulation wpb_simple.launch #
 rosrun rqt_robot_steering rqt_robot_steering #Call rqt control interface
 ```
-```shell
-/opt/ros/noetic/
-```
+- The address of the common dependency package
 ```shell
 /opt/ros/melodic/share
 ```
--Demo.cpp
+- Demo.cpp
 ```cpp
 #include"ros/ros.h"
 #include"std_msgs/String.h"
