@@ -246,4 +246,4 @@ rosrun map_server map_saver -f demo
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
 [Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
-[ros-teleop](https://github.com/ros-teleop)<br>
+[ROS-teleop](https://github.com/ros-teleop)<br>
