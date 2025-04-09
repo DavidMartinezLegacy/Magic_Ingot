@@ -68,6 +68,6 @@ rosrun turtlesim turtlesim_node
 roslaunch wpr_simulation wpb_simple.launch #
 rosrun rqt_robot_steering rqt_robot_steering #Call rqt control interface
 ```
-- References:<.br>
-[ROS Index](https://index.ros.org/) <.br>
-[Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<.br>
+- References:<br>
+[ROS Index](https://index.ros.org/) <br>
+[Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
