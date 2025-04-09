@@ -29,10 +29,10 @@ echo "source ~/ros_workspace/devel/setup.bash" >> ~/.bashrc
 gedit/code ~/.bashrc #Modify the bashrc file to add global environment variables
 source ~/.bashrc #Check if it is successful
 ```
--Terminator:
-Ctrl + Shift + E   Horizontal split screen
-Ctrl + Shift + O   Vertical split screen
-Ctrl + Shift + W   Cancel split screen
+- Terminator:
+Ctrl + Shift + E   Horizontal split screen<br>
+Ctrl + Shift + O   Vertical split screen<br>
+Ctrl + Shift + W   Cancel split screen<br>
 Alt + ↑ ↓ ← →      Move focus <br>
 
 # Package
