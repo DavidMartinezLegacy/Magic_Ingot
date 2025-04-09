@@ -1,7 +1,5 @@
 # Magic-Ingot
 
-<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
-
 - ROS environment testing
 ```shell
 roscore
@@ -10,6 +8,7 @@ rosrun turtlesim turtle_teleop_key
 rosrun rqt_graph rqt_graph
 ```
 - Workspace
+<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
 ```shell
 mkdir catkin_ws
 cd catkin_ws
