@@ -124,6 +124,119 @@ int main(int argc,char **argv)
     return 0;
 }
 ```
+```cpp
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
+#include <stdio.h>
+#include <termios.h>
+
+static float linear_vel = 0.1;
+static float angular_vel = 0.1;
+static int k_vel = 3;
+
+int GetCh()
+{
+  static struct termios oldt, newt;
+  tcgetattr( STDIN_FILENO, &oldt);
+  newt = oldt;
+  newt.c_lflag &= ~(ICANON);
+  tcsetattr( STDIN_FILENO, TCSANOW, &newt);
+  int c = getchar();
+  tcsetattr( STDIN_FILENO, TCSANOW, &oldt);
+  return c;
+}
+
+int main(int argc, char** argv)
+{
+  ros::init(argc, argv, "keyboard_vel_cmd");
+
+  ros::NodeHandle n;
+  ros::Publisher cmd_vel_pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+
+  geometry_msgs::Twist base_cmd;
+  base_cmd.linear.x = 0;
+  base_cmd.linear.y = 0;
+  base_cmd.angular.z = 0;
+
+  while(n.ok())
+  {
+    int cKey = GetCh();
+    if(cKey=='w')
+    {
+      base_cmd.linear.x += linear_vel;
+      if(base_cmd.linear.x > linear_vel*k_vel)
+        base_cmd.linear.x = linear_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey=='s')
+    {
+      base_cmd.linear.x += -linear_vel;
+
+      if(base_cmd.linear.x < -linear_vel*k_vel)
+        base_cmd.linear.x = -linear_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey=='a')
+    {
+      base_cmd.linear.y += linear_vel;
+      if(base_cmd.linear.y > linear_vel*k_vel)
+        base_cmd.linear.y = linear_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    }
+    else if(cKey=='d')
+    {
+      base_cmd.linear.y += -linear_vel;
+      if(base_cmd.linear.y < -linear_vel*k_vel)
+        base_cmd.linear.y = -linear_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey=='q')
+    {
+      base_cmd.angular.z += angular_vel;
+      if(base_cmd.angular.z > angular_vel*k_vel)
+        base_cmd.angular.z = angular_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey=='e')
+    {
+      base_cmd.angular.z += -angular_vel;
+      if(base_cmd.angular.z < -angular_vel*k_vel)
+        base_cmd.angular.z = -angular_vel*k_vel;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey==' ')
+    {
+      base_cmd.linear.x = 0;
+      base_cmd.linear.y = 0;
+      base_cmd.angular.z = 0;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+    } 
+    else if(cKey=='x')
+    {
+      base_cmd.linear.x = 0;
+      base_cmd.linear.y = 0;
+      base_cmd.angular.z = 0;
+      cmd_vel_pub.publish(base_cmd);
+      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      printf("quit！ \n");
+      return 0;
+    } 
+    else
+    {
+       printf(" - Undefined instruction \n");
+    }
+    
+  }
+  return 0;
+}
+```
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
 [Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
