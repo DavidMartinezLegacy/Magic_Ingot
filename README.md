@@ -31,6 +31,7 @@ Ctrl + Shift + W   Cancel split screen
 Alt + ↑ ↓ ← →      Move focus
 
 # Package Structure：
+```
 Common files and paths under a package are:
 ├── CMakeLists.txt #package compilation rules (required)
 ├── package.xml #package description (required)
@@ -42,6 +43,7 @@ Common files and paths under a package are:
 ├── models/ #3D model file
 ├── urdf/ #urdf file
 ├── launch/ #launch file
+```
 其中定义package的是 CMakeLists.txt 和 package.xml ，这两个文件是package中必不可少的。catkin编译系统在编译前，首先就要解析这两个文件。这两个文件就定义了一个package。
 	CMakeLists.txt: 定义package的包名、依赖、源文件、目标文件等编译规则，是package不可少的成分；
 	package.xml: 描述package的包名、版本号、作者、依赖等信息，是package不可少的成分；
