@@ -45,18 +45,18 @@ Common files and paths under a package are:
 ├── launch/ #launch file
 ```
 ```
-其中定义package的是 CMakeLists.txt 和 package.xml ，这两个文件是package中必不可少的。catkin编译系统在编译前，首先就要解析这两个文件。这两个文件就定义了一个package。
-	CMakeLists.txt: 定义package的包名、依赖、源文件、目标文件等编译规则，是package不可少的成分；
-	package.xml: 描述package的包名、版本号、作者、依赖等信息，是package不可少的成分；
-	src/: 存放ROS的源代码，包括C++的源码和(.cpp)以及Python的module(.py)；
-	include/: 存放C++源码对应的头文件；
-	scripts/: 存放可执行脚本，例如shell脚本(.sh)、Python脚本(.py)；
-	msg/: 存放自定义格式的消息(.msg)；
-	srv/: 存放自定义格式的服务(.srv)；
-	models/: 存放机器人或仿真场景的3D模型(.sda, .stl, .dae等)；
-	urdf/: 存放机器人的模型描述(.urdf或.xacro)；
-	launch/: 存放launch文件(.launch或.xml)；
-通常ROS文件组织都是按照以上的形式，这是约定俗成的命名习惯，建议遵守。以上路径中，只有 CMakeLists.txt 和 package.xml 是必须的，其余路径根据软件包是否需要来决定。
+The CMakeLists.txt and package.xml files are essential for a package. The catkin compilation system must first parse these two files before compiling. These two files define a package.
+├── CMakeLists.txt: defines the package name, dependencies, source files, target files and other compilation rules of the package, which is an indispensable component of the package;
+├── package.xml: describes the package name, version number, author, dependencies and other information of the package, which is an indispensable component of the package;
+├── src/: stores ROS source code, including C++ source code (.cpp) and Python module (.py);
+├── include/: stores header files corresponding to C++ source code;
+├── scripts/: stores executable scripts, such as shell scripts (.sh) and Python scripts (.py);
+├── msg/: stores messages in custom format (.msg);
+├── srv/: stores services in custom formats (.srv);
+├── models/: stores 3D models of robots or simulation scenes (.sda, .stl, .dae, etc.);
+├── urdf/: stores the robot model description (.urdf or .xacro);
+├── launch/: stores launch files (.launch or .xml);
+Usually ROS files are organized in the above format, which is a common naming convention and is recommended to be followed. Among the above paths, only CMakeLists.txt and package.xml are required, and the rest of the paths are determined by whether the software package needs them.
 ```
 ```shell
 git checkout noetic-devel
