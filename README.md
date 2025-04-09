@@ -24,11 +24,17 @@ echo "source ~/ros_workspace/devel/setup.bash" >> ~/.bashrc
 gedit/code ~/.bashrc #Modify the bashrc file to add global environment variables
 source ~/.bashrc #Check if it is successful
 ```
-- References:
-[ROS Index]（https://index.ros.org/）
+-Terminator:
+Ctrl + Shift + E   Horizontal split screen
+Ctrl + Shift + O   Vertical split screen
+Ctrl + Shift + W   Cancel split screen
+Alt + ↑ ↓ ← →      Move focus
+
 ```shell
 git checkout noetic-devel
 rosrun turtlesim turtlesim_node
 roslaunch wpr_simulation wpb_simple.launch #
 rosrun rqt_robot_steering rqt_robot_steering #Call rqt control interface
 ```
+- References:
+[ROS Index]（https://index.ros.org/）
