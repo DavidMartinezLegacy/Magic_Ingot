@@ -5,19 +5,28 @@ wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/
 roscore
 rosrun turtlesim turtlesim_node
 ```
+- 工作空间
 ```shell
 mkdir catkin_ws
 cd catkin_ws
 mkdir src
 cd src
+cd ..
+catkin_make
 ```
 ```
 git clone https://github.com/ros/ros_tutorials.git
 ```
+- 环境变量
 ```shell
 source ~/catkin_ws/devel/setup.bash
-roslaunch wpr_simulation wpb_simple.launch #
+echo "source ~/ros_workspace/devel/setup.bash" >> ~/.bashrc
+gedit/code ~/.bashrc #Modify the bashrc file to add global environment variables
+source ~/.bashrc #Check if it is successful
 ```
 ```shell
+git checkout noetic-devel
+rosrun turtlesim turtlesim_node
+roslaunch wpr_simulation wpb_simple.launch #
 rosrun rqt_robot_steering rqt_robot_steering #Call rqt control interface
 ```
