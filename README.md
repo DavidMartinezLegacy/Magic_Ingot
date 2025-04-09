@@ -44,6 +44,7 @@ Common files and paths under a package are:
 ├── urdf/ #urdf file
 ├── launch/ #launch file
 ```
+```
 其中定义package的是 CMakeLists.txt 和 package.xml ，这两个文件是package中必不可少的。catkin编译系统在编译前，首先就要解析这两个文件。这两个文件就定义了一个package。
 	CMakeLists.txt: 定义package的包名、依赖、源文件、目标文件等编译规则，是package不可少的成分；
 	package.xml: 描述package的包名、版本号、作者、依赖等信息，是package不可少的成分；
@@ -56,7 +57,7 @@ Common files and paths under a package are:
 	urdf/: 存放机器人的模型描述(.urdf或.xacro)；
 	launch/: 存放launch文件(.launch或.xml)；
 通常ROS文件组织都是按照以上的形式，这是约定俗成的命名习惯，建议遵守。以上路径中，只有 CMakeLists.txt 和 package.xml 是必须的，其余路径根据软件包是否需要来决定。
-
+```
 ```shell
 git checkout noetic-devel
 rosrun turtlesim turtlesim_node
