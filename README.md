@@ -63,6 +63,27 @@ The CMakeLists.txt and package.xml files are essential for a package. The catkin
 ├── launch/: stores launch files (.launch or .xml);
 Usually ROS files are organized in the above format, which is a common naming convention and is recommended to be followed. Among the above paths, only CMakeLists.txt and package.xml are required, and the rest of the paths are determined by whether the software package needs them.
 ```
+
+_Package related commands:_
+
+- rospack(Tools for package management):
+```
+rospack help	显示rospack的用法
+rospack list	列出本机所有package
+rospack depends [package]	显示package的依赖包
+rospack find [package]	定位某个package
+rospack profile	刷新所有package的位置记录
+```
+- roscd (The command is similar to the Linux system's cd, but the improvement is that roscd can directly cd to the ROS software package):
+```
+roscd [pacakge]	cd到ROS package所在路径
+rosls:
+rosls 也可以视为Linux指令 ls 的改进版，可以直接 ls ROS软件包的内容。
+```
+- rosls:
+```
+rosls [pacakge]	List the files under the ROS package
+```
 ```shell
 git checkout noetic-devel
 rosrun turtlesim turtlesim_node
