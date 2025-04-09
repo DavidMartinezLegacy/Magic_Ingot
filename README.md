@@ -7,9 +7,10 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 rosrun rqt_graph rqt_graph
 ```
-- Workspace
+# Workspace
 <img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
 
+- Create a workspace
 ```shell
 mkdir catkin_ws
 cd catkin_ws
