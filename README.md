@@ -285,6 +285,17 @@ int main(int argc,char** argv)
     system(dir.c_str()); //Playing an audio file
 }
 ```
+```html
+<launch>
+    <!-- Open the Experiment Node -->
+    <node pkg="bobac3_audio" type="collect_node" name="collect" output="screen"/>
+    <!-- Open the voice collection node -->
+    <node name="voice_collect" pkg="robot_audio" type="voice_collect_node" output="screen">
+        <!-- Audio file directory -->
+        <param name="audio_file" type="string" value="./AIUI/audio/audio.wav"/>
+    </node>
+</launch>
+```
 
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
