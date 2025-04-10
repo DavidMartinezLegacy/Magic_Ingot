@@ -258,6 +258,7 @@ roslaunch bobac3_navigation demo_nav_2d.launch
 
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
+[ROS-Tutorial](https://tr-ros-tutorial.readthedocs.io/)<br>
 [Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
 [ROS-teleop](https://github.com/ros-teleop)<br>
 [Navigation](http://wiki.ros.org/navigation)
