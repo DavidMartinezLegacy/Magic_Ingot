@@ -293,9 +293,7 @@ code CMakeLists.txt
 ```txt
 add_executable(collect_node src/collect.cpp)
 add_dependencies(collect_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(collect_node
-${catkin_LIBRARIES}
-)
+target_link_libraries(collect_node${catkin_LIBRARIES})
 ```
 ```shell
 cd ~/catkin_ws
@@ -360,9 +358,7 @@ code CMakeLists.txt
 ```txt
 add_executable(dictation_node src/dictation.cpp)
 add_dependencies(dictation_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(dictation_node
-${catkin_LIBRARIES}
-)
+target_link_libraries(dictation_node${catkin_LIBRARIES})
 ```
 ```shell
 cd ~/catkin_ws
