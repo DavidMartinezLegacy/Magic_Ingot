@@ -285,7 +285,7 @@ int main(int argc,char** argv)
     system(dir.c_str()); //Playing an audio file
 }
 ```
-```html
+```HTML
 <launch>
     <!-- Open the Experiment Node -->
     <node pkg="bobac3_audio" type="collect_node" name="collect" output="screen"/>
