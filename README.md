@@ -256,6 +256,7 @@ code map_server.launch
 roslaunch bobac3_navigation demo_nav_2d.launch
 ```
 # Voice System
+- Voice Collection
 ```shell
 sudo apt install libasound2-dev
 sudo apt-get install sox
@@ -296,8 +297,9 @@ target_link_libraries(collect_node
 ${catkin_LIBRARIES}
 )
 ```
-
 ```shell
+cd ~/catkin_ws
+catkin_make
 cd ~/catkin_ws/src/bobac3_audio
 mkdir launch
 cd launch
@@ -316,6 +318,72 @@ touch voice_collect.launch
 ```
 ```shell
 roslaunch bobac3_audio voice_collect.launch
+```
+- Voice Dictation
+```shell
+cd ~/catkin_ws/src/bobac3_audio/src
+touch dictation.cpp
+code dictation.cpp
+```
+```cpp
+#include <ros/ros.h>
+#include <robot_audio/robot_iat.h>
+#include <robot_audio/Collect.h>
+#include <string>
+
+int main(int argc, char ** argv)
+{
+    ros::init(argc, argv, "dictation");
+    ros::NodeHandle n;
+    ros::ServiceClient iat_client = n.serviceClient<robot_audio::robot_iat>("voice_iat");
+    ros::ServiceClient collect_client = n.serviceClient<robot_audio::Collect>("voice_collect");
+    
+    robot_audio::Collect coll_srv; //Create a voice collection service instance
+    coll_srv.request.collect_flag = 1; //Create a voice collection service instance求
+    ros::service::waitForService("voice_collect");
+    collect_client.call(coll_srv);
+    std::cout<<"Voice collection ends:"<<coll_srv.response.voice_filename<<std::endl;
+
+    robot_audio::robot_iat iat_srv; //Create a voice dictation service instance
+    iat_srv.request.audiopath = coll_srv.response.voice_filename;
+    ros::service::waitForService("voice_iat");
+    iat_client.call(iat_srv);
+
+    std::cout<< "What you hear:" << iat_srv.response.text <<std::endl;
+    return 0;
+}
+```
+```shell
+cd ~/catkin_ws/src/bobac3_audio
+code CMakeLists.txt
+```
+```txt
+add_executable(dictation_node src/dictation.cpp)
+add_dependencies(dictation_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(dictation_node
+${catkin_LIBRARIES}
+)
+```
+```shell
+cd ~/catkin_ws
+catkin_make
+cd ~/catkin_ws/src/bobac3_audio/launch
+touch voice_dictation.launch
+```
+```HTML
+<launch>
+    <!-- Experimental Node -->
+    <node pkg="bobac3_audio" type="dictation_node" name="dictation" output="screen"/>
+    <!-- Open the voice collection node -->
+    <node name="voice_collect" pkg="robot_audio" type="voice_collect_node" output="screen">
+        <!-- Audio file directory -->
+        <param name="audio_file" type="string" value="./AIUI/audio/audio.wav"/>
+    </node>
+    <!-- Enable Voice Service -->
+    <node pkg="robot_audio" type="voice_aiui_node" name="voice_aiui_node"/>
+```
+```shell
+roslaunch bobac3_audio voice_dictation.launch
 ```
 
 - References:<br>
