@@ -285,6 +285,14 @@ int main(int argc,char** argv)
     system(dir.c_str()); //Playing an audio file
 }
 ```
+```text
+add_executable(collect_node src/collect.cpp)
+add_dependencies(collect_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(collect_node
+${catkin_LIBRARIES}
+)
+```
+
 ```shell
 cd ~/ros_workspace/src/bobac3_audio
 mkdir launch
@@ -301,6 +309,9 @@ touch voice_collect.launch
         <param name="audio_file" type="string" value="./AIUI/audio/audio.wav"/>
     </node>
 </launch>
+```
+```shell
+roslaunch bobac3_audio voice_collect.launch
 ```
 
 - References:<br>
