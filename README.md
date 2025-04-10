@@ -285,7 +285,11 @@ int main(int argc,char** argv)
     system(dir.c_str()); //Playing an audio file
 }
 ```
-```text
+```
+cd ~/ros_workspace/src/bobac3_audio
+code CMakeLists.txt
+```
+```txt
 add_executable(collect_node src/collect.cpp)
 add_dependencies(collect_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(collect_node
