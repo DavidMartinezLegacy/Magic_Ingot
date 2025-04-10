@@ -247,7 +247,7 @@ rosrun map_server map_saver -f demo
 ```
 # Navigation
 
-<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
+<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/overview_tf.png" title="overview_tf.png">
 
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
