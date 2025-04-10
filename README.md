@@ -249,6 +249,13 @@ rosrun map_server map_saver -f demo
 
 <img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/overview_tf.png" title="overview_tf.png">
 
+```shell
+sudo apt-get install ros-melodic-dwa-local-planner
+cd ros_workspace/src/bobac3_navigation/launch
+code map_server.launch
+roslaunch bobac3_navigation demo_nav_2d.launch
+```
+
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
 [Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
