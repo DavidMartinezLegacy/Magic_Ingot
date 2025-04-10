@@ -259,9 +259,9 @@ roslaunch bobac3_navigation demo_nav_2d.launch
 ```shell
 sudo apt install libasound2-dev
 sudo apt-get install sox
-cd ~/ros_workspace/src
+cd ~/catkin_ws/src
 catkin_create_pkg bobac3_audio actionlib robot_audio  move_base_msgs roscpp
-cd ~/ros_workspace/src/bobac3_audio/src
+cd ~/catkin_ws/src/bobac3_audio/src
 touch collect.cpp
 ```
 ```cpp
@@ -286,7 +286,7 @@ int main(int argc,char** argv)
 }
 ```
 ```
-cd ~/ros_workspace/src/bobac3_audio
+cd ~/catkin_ws/src/bobac3_audio
 code CMakeLists.txt
 ```
 ```txt
@@ -298,7 +298,7 @@ ${catkin_LIBRARIES}
 ```
 
 ```shell
-cd ~/ros_workspace/src/bobac3_audio
+cd ~/catkin_ws/src/bobac3_audio
 mkdir launch
 cd launch
 touch voice_collect.launch
