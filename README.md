@@ -256,6 +256,35 @@ code map_server.launch
 roslaunch bobac3_navigation demo_nav_2d.launch
 ```
 # Voice System
+```shell
+sudo apt install libasound2-dev
+sudo apt-get install sox
+cd ~/ros_workspace/src
+catkin_create_pkg bobac3_audio actionlib robot_audio  move_base_msgs roscpp
+cd ~/ros_workspace/src/bobac3_audio/src
+touch collect.cpp
+```
+```cpp
+#include <ros/ros.h>
+#include <robot_audio/Collect.h>
+#include <iostream>
+#include <string>
+
+int main(int argc,char** argv)
+{
+    ros::init(argc,argv,"collect"); //Initialize Node
+    ros::NodeHandle n; //Node handle
+    ros::ServiceClient collect_client = n.serviceClient<robot_audio::Collect>("voice_collect"); //Defining the Client
+    robot_audio::Collect srv; //Defining a message
+    srv.request.collect_flag = 1;
+    ros::service::waitForService("voice_collect"); //Waiting for the service to start
+    collect_client.call(srv); //Send Message
+    ROS_INFO("File saved in : %s",srv.response.voice_filename.c_str());
+    std::string dir = "play "+srv.response.voice_filename; //Edit as system command
+    sleep(1);
+    system(dir.c_str()); //Playing an audio file
+}
+```
 
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
