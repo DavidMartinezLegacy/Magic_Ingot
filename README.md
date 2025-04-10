@@ -238,12 +238,17 @@ int main(int argc, char** argv)
   return 0;
 }
 ```
+# SLAM
 - bobac3_slam
 ```shell
 roslaunch bobac3_slam bobac3_slam_sim.launch
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 rosrun map_server map_saver -f demo
 ```
+# Navigation
+
+<img src="https://github.com/OogwayLeonardo/Magic-Ingot/blob/main/ROS%20Structure.jpg" title="ROS%20Structure.jpg">
+
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
 [Ubuntu install of ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)<br>
