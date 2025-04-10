@@ -285,6 +285,12 @@ int main(int argc,char** argv)
     system(dir.c_str()); //Playing an audio file
 }
 ```
+```shell
+cd ~/ros_workspace/src/bobac3_audio
+mkdir launch
+cd launch
+touch voice_collect.launch
+```
 ```HTML
 <launch>
     <!-- Open the Experiment Node -->
