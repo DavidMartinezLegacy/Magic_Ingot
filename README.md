@@ -253,6 +253,18 @@ rosrun map_server map_saver -f demo
 sudo apt-get install ros-melodic-dwa-local-planner
 cd catkin_ws/src/bobac3_navigation/launch
 code map_server.launch
+```
+```
+<launch>
+  <!--  ****** Maps *****  -->
+  <node name="map_server" pkg="map_server" type="map_server"  args="$(find bobac3_navigation)/maps/reicom.yaml">
+    <param name="frame_id" value="map"/>
+  </node>
+
+</launch>
+
+```
+```
 roslaunch bobac3_navigation demo_nav_2d.launch
 ```
 # Voice System
