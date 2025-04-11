@@ -251,7 +251,7 @@ rosrun map_server map_saver -f demo
 
 ```shell
 sudo apt-get install ros-melodic-dwa-local-planner
-cd ros_workspace/src/bobac3_navigation/launch
+cd catkin_ws/src/bobac3_navigation/launch
 code map_server.launch
 roslaunch bobac3_navigation demo_nav_2d.launch
 ```
