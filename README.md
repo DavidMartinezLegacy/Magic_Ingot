@@ -256,8 +256,10 @@ code map_server.launch
 ```
 ```HTML
 <launch>
-  <!--  ****** Maps *****  -->
-  <node name="map_server" pkg="map_server" type="map_server"  args="$(find bobac3_navigation)/maps/reicom.yaml">
+  <arg name="map_file"  default="reicom"/> <!--Mapfile_name-->
+  <!--  ****** Maps *****  --> 
+  <node name="map_server" pkg="map_server" type="map_server" 
+    args="$(find bobac3_navigation)/maps/$(arg map_file).yaml">
     <param name="frame_id" value="map"/>
   </node>
 </launch>
