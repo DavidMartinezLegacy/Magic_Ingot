@@ -1,4 +1,4 @@
-# Magic-Ingot
+# Magic_Ingot
 
 - ROS environment testing
 ```shell
