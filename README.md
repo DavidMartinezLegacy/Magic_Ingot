@@ -393,7 +393,12 @@ touch voice_dictation.launch
 ```shell
 roslaunch bobac3_audio voice_dictation.launch
 ```
-
+# Ultimate Version
+```
+cd bobac3 && catkin_make
+source ~/bobac3_ws/devel/setup.bash
+roslaunch nav_goal demo.launch
+```
 - References:<br>
 [ROS Index](https://index.ros.org/) <br>
 [ROS-Tutorial](https://tr-ros-tutorial.readthedocs.io/)<br>
