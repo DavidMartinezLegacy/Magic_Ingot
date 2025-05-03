@@ -395,7 +395,7 @@ roslaunch bobac3_audio voice_dictation.launch
 ```
 # Ultimate Version
 ```
-cd bobac3 && catkin_make
+cd bobac3_ws && catkin_make
 source ~/bobac3_ws/devel/setup.bash
 roslaunch nav_goal demo.launch
 ```
