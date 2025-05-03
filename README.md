@@ -393,6 +393,12 @@ touch voice_dictation.launch
 ```shell
 roslaunch bobac3_audio voice_dictation.launch
 ```
+# Face recognition test
+path bobac3_ws/src/face_rec/face_data
+```
+cd bobac3_ws/src/face_rec/face_data
+roslaunch face_rec renlian.launch
+```
 # Ultimate Version
 ```
 cd bobac3_ws && catkin_make
