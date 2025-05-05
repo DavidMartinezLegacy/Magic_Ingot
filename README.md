@@ -397,7 +397,7 @@ roslaunch bobac3_audio voice_dictation.launch
 path bobac3_ws/src/face_rec/face_data
 ```
 cd bobac3_ws/src/face_rec/face_data
-roslaunch face_rec renlian.launch
+roslaunch face_rec face_rec.launch
 ```
 # Ultimate Version
 ```
